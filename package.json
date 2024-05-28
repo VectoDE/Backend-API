@@ -11,14 +11,17 @@
     "mongoose": "^8.4.0",
     "multer": "^1.4.5-lts.1",
     "mysql": "^2.18.1",
-    "nodemailer": "^6.9.13"
+    "nodemailer": "^6.9.13",
+    "nodemon": "^3.1.1"
   },
   "name": "backend-api",
   "description": "**Express.js Backend API**",
   "version": "1.0.0",
   "main": "src/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
   },
   "repository": {
     "type": "git",
