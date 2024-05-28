@@ -1,0 +1,45 @@
+{
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.5",
+    "env": "^0.0.2",
+    "express": "^4.19.2",
+    "firebase": "^10.12.2",
+    "firebase-admin": "^12.1.1",
+    "googleapis": "^137.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.4.0",
+    "multer": "^1.4.5-lts.1",
+    "mysql": "^2.18.1",
+    "nodemailer": "^6.9.13"
+  },
+  "name": "backend-api",
+  "description": "**Express.js Backend API**",
+  "version": "1.0.0",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VectoDE/Backend-API.git"
+  },
+  "keywords": [
+    "Backend",
+    "API",
+    "E-Commerce",
+    "Blog",
+    "Ticketing",
+    "Chatting",
+    "Management",
+    "Projectmanagement",
+    "CRUD",
+    "Content-Management"
+  ],
+  "author": "Tim Hauke (Vecto.)",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/VectoDE/Backend-API/issues"
+  },
+  "homepage": "https://github.com/VectoDE/Backend-API#readme"
+}
