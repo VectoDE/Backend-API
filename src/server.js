@@ -19,8 +19,6 @@ const photoRoutes = require('./routes/photo.routes');
 
 const analyticsRoutes = require('./routes/analytics.routes');
 
-const notificationRoutes = require('./routes/notification.routes');
-
 const authenticationMiddleware = require('./middleware/authentication.middleware');
 
 const app = express();
@@ -43,8 +41,6 @@ app.use('/api/ticket', authenticationMiddleware, ticketRoutes);
 app.use('/api/photo', authenticationMiddleware, photoRoutes);
 
 app.use('/api/analytics', authenticationMiddleware, analyticsRoutes);
-
-app.use('/api/notification', authenticationMiddleware, notificationRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

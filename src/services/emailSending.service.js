@@ -16,7 +16,6 @@ exports.sendEmail = async (to, subject, html) => {
             subject,
             html,
         };
-        
         await transporter.sendMail(mailOptions);
         console.log('E-Mail erfolgreich gesendet');
     } catch (error) {
