@@ -4,12 +4,12 @@ const roleController = require('../controller/role.controller');
 const auth = require('../middleware/authentication.middleware');
 const checkRole = require('../middleware/checkRole.middleware');
 
-router.post('/', auth, checkRole('admin'), roleController.createRole);
+router.post('/create', auth, checkRole('admin'), roleController.createRole);
 
 router.get('/', roleController.getAllRoles);
 
-router.put('/:id', auth, checkRole('admin'), roleController.updateRole);
+router.put('/:id/update', auth, checkRole('admin'), roleController.updateRole);
 
-router.delete('/:id', auth, checkRole('admin'), roleController.deleteRole);
+router.delete('/:id/delete', auth, checkRole('admin'), roleController.deleteRole);
 
 module.exports = router;
