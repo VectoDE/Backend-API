@@ -25,13 +25,13 @@ const ticketController = require('../controller/ticket.controller');
 const auth = require('../middleware/authentication.middleware');
 const checkRole = require('../middleware/checkRole.middleware');
 
-router.post('/', auth, ticketController.createTicket);
+router.post('/create', auth, ticketController.createTicket);
 
 router.get('/', auth, checkRole('admin'), ticketController.getAllTickets);
 
-router.put('/:id', auth, ticketController.updateTicket);
+router.put('/:id/update', auth, ticketController.updateTicket);
 
-router.delete('/:id', auth, checkRole('admin'), ticketController.deleteTicket);
+router.delete('/:id/delete', auth, checkRole('admin'), ticketController.deleteTicket);
 
 module.exports = router;
 
