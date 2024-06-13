@@ -1,3 +1,24 @@
+//|------------------------------------------------------------------------------------|
+//|                                                                                    |
+//|                                                                                    |
+//|                                     CREATOR                                        |
+//|                                                                                    |
+//|                                Vecto. (Tim Hauke)                                  |
+//|                                                                                    |
+//|                                                                                    |
+//|                                    FRAMEWORKS                                      |
+//|                                                                                    |
+//|                                    Express.js                                      |
+//|                                    BodyParser                                      |
+//|                                      Bcrypt                                        |
+//|                                   JSONWebToken                                     |
+//|                                                                                    |
+//|                                                                                    |
+//|                                Copyright (c) 2024                                  |
+//|                                                                                    |
+//|                                                                                    |
+//|------------------------------------------------------------------------------------|
+
 const mongoose = require('mongoose');
 
 const ticketSchema = new mongoose.Schema({
@@ -19,3 +40,24 @@ const ticketSchema = new mongoose.Schema({
 const Ticket = mongoose.model('Ticket', ticketSchema);
 
 module.exports = Ticket;
+
+//|------------------------------------------------------------------------------------|
+//|                                                                                    |
+//|                                                                                    |
+//|                                     CREATOR                                        |
+//|                                                                                    |
+//|                                Vecto. (Tim Hauke)                                  |
+//|                                                                                    |
+//|                                                                                    |
+//|                                    FRAMEWORKS                                      |
+//|                                                                                    |
+//|                                    Express.js                                      |
+//|                                    BodyParser                                      |
+//|                                      Bcrypt                                        |
+//|                                   JSONWebToken                                     |
+//|                                                                                    |
+//|                                                                                    |
+//|                                Copyright (c) 2024                                  |
+//|                                                                                    |
+//|                                                                                    |
+//|------------------------------------------------------------------------------------|

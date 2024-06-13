@@ -1,3 +1,24 @@
+//|------------------------------------------------------------------------------------|
+//|                                                                                    |
+//|                                                                                    |
+//|                                     CREATOR                                        |
+//|                                                                                    |
+//|                                Vecto. (Tim Hauke)                                  |
+//|                                                                                    |
+//|                                                                                    |
+//|                                    FRAMEWORKS                                      |
+//|                                                                                    |
+//|                                    Express.js                                      |
+//|                                    BodyParser                                      |
+//|                                      Bcrypt                                        |
+//|                                   JSONWebToken                                     |
+//|                                                                                    |
+//|                                                                                    |
+//|                                Copyright (c) 2024                                  |
+//|                                                                                    |
+//|                                                                                    |
+//|------------------------------------------------------------------------------------|
+
 const jwt = require('../utilities/jwt.utilities');
 const User = require('../models/user.model');
 
@@ -25,3 +46,24 @@ const authenticationMiddleware = async (req, res, next) => {
 };
 
 module.exports = authenticationMiddleware;
+
+//|------------------------------------------------------------------------------------|
+//|                                                                                    |
+//|                                                                                    |
+//|                                     CREATOR                                        |
+//|                                                                                    |
+//|                                Vecto. (Tim Hauke)                                  |
+//|                                                                                    |
+//|                                                                                    |
+//|                                    FRAMEWORKS                                      |
+//|                                                                                    |
+//|                                    Express.js                                      |
+//|                                    BodyParser                                      |
+//|                                      Bcrypt                                        |
+//|                                   JSONWebToken                                     |
+//|                                                                                    |
+//|                                                                                    |
+//|                                Copyright (c) 2024                                  |
+//|                                                                                    |
+//|                                                                                    |
+//|------------------------------------------------------------------------------------|

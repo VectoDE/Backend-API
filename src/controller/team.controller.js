@@ -1,3 +1,24 @@
+//|------------------------------------------------------------------------------------|
+//|                                                                                    |
+//|                                                                                    |
+//|                                     CREATOR                                        |
+//|                                                                                    |
+//|                                Vecto. (Tim Hauke)                                  |
+//|                                                                                    |
+//|                                                                                    |
+//|                                    FRAMEWORKS                                      |
+//|                                                                                    |
+//|                                    Express.js                                      |
+//|                                    BodyParser                                      |
+//|                                      Bcrypt                                        |
+//|                                   JSONWebToken                                     |
+//|                                                                                    |
+//|                                                                                    |
+//|                                Copyright (c) 2024                                  |
+//|                                                                                    |
+//|                                                                                    |
+//|------------------------------------------------------------------------------------|
+
 const Team = require('../models/team.model');
 
 exports.createTeam = async (req, res) => {
@@ -52,3 +73,24 @@ exports.deleteTeam = async (req, res) => {
         res.status(500).send('Error deleting team');
     }
 };
+
+//|------------------------------------------------------------------------------------|
+//|                                                                                    |
+//|                                                                                    |
+//|                                     CREATOR                                        |
+//|                                                                                    |
+//|                                Vecto. (Tim Hauke)                                  |
+//|                                                                                    |
+//|                                                                                    |
+//|                                    FRAMEWORKS                                      |
+//|                                                                                    |
+//|                                    Express.js                                      |
+//|                                    BodyParser                                      |
+//|                                      Bcrypt                                        |
+//|                                   JSONWebToken                                     |
+//|                                                                                    |
+//|                                                                                    |
+//|                                Copyright (c) 2024                                  |
+//|                                                                                    |
+//|                                                                                    |
+//|------------------------------------------------------------------------------------|

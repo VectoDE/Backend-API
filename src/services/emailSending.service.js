@@ -1,17 +1,39 @@
+//|------------------------------------------------------------------------------------|
+//|                                                                                    |
+//|                                                                                    |
+//|                                     CREATOR                                        |
+//|                                                                                    |
+//|                                Vecto. (Tim Hauke)                                  |
+//|                                                                                    |
+//|                                                                                    |
+//|                                    FRAMEWORKS                                      |
+//|                                                                                    |
+//|                                    Express.js                                      |
+//|                                    BodyParser                                      |
+//|                                      Bcrypt                                        |
+//|                                   JSONWebToken                                     |
+//|                                                                                    |
+//|                                                                                    |
+//|                                Copyright (c) 2024                                  |
+//|                                                                                    |
+//|                                                                                    |
+//|------------------------------------------------------------------------------------|
+
 const nodemailer = require('nodemailer');
 
 const transporter = nodemailer.createTransport({
-    service: 'Gmail',
+    service: process.env.EMAIL_SERVICE,
+    host: process.env.EMAIL_HOST,
     auth: {
-        user: 'deine_email@example.com',
-        pass: 'dein_passwort',
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
     },
 });
 
 exports.sendEmail = async (to, subject, html) => {
     try {
         const mailOptions = {
-            from: 'deine_email@example.com',
+            from: process.env.EMAIL_FROM,
             to,
             subject,
             html,
@@ -47,3 +69,24 @@ exports.sendTicketResponseNotification = async (to, ticketTitle, responderName) 
   `;
     await this.sendEmail(to, subject, html);
 };
+
+//|------------------------------------------------------------------------------------|
+//|                                                                                    |
+//|                                                                                    |
+//|                                     CREATOR                                        |
+//|                                                                                    |
+//|                                Vecto. (Tim Hauke)                                  |
+//|                                                                                    |
+//|                                                                                    |
+//|                                    FRAMEWORKS                                      |
+//|                                                                                    |
+//|                                    Express.js                                      |
+//|                                    BodyParser                                      |
+//|                                      Bcrypt                                        |
+//|                                   JSONWebToken                                     |
+//|                                                                                    |
+//|                                                                                    |
+//|                                Copyright (c) 2024                                  |
+//|                                                                                    |
+//|                                                                                    |
+//|------------------------------------------------------------------------------------|

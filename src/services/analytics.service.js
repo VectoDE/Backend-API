@@ -1,12 +1,33 @@
+//|------------------------------------------------------------------------------------|
+//|                                                                                    |
+//|                                                                                    |
+//|                                     CREATOR                                        |
+//|                                                                                    |
+//|                                Vecto. (Tim Hauke)                                  |
+//|                                                                                    |
+//|                                                                                    |
+//|                                    FRAMEWORKS                                      |
+//|                                                                                    |
+//|                                    Express.js                                      |
+//|                                    BodyParser                                      |
+//|                                      Bcrypt                                        |
+//|                                   JSONWebToken                                     |
+//|                                                                                    |
+//|                                                                                    |
+//|                                Copyright (c) 2024                                  |
+//|                                                                                    |
+//|                                                                                    |
+//|------------------------------------------------------------------------------------|
+
 const { google } = require('googleapis');
 
 const auth = new google.auth.GoogleAuth({
-    keyFile: 'serviceAccountKey.json',
+    keyFile: './config/serviceAccountKey.json',
     scopes: ['https://www.googleapis.com/auth/analytics.readonly'],
 });
 
 const analyticsReporting = google.analyticsreporting({
-    version: 'v4',
+    version: process.env.GOOGLE_ANALYTICS_VERSION,
     auth: auth,
 });
 
@@ -16,7 +37,7 @@ const analyticsService = {
             const response = await analyticsReporting.reports.batchGet({
                 requestBody: {
                     reportRequests: [{
-                        viewId: 'your_view_id',
+                        viewId: process.env.GOOGLE_VIEW_ID,
                         dateRanges: [{
                             startDate: '7daysAgo',
                             endDate: 'today',
@@ -37,3 +58,24 @@ const analyticsService = {
 };
 
 module.exports = analyticsService;
+
+//|------------------------------------------------------------------------------------|
+//|                                                                                    |
+//|                                                                                    |
+//|                                     CREATOR                                        |
+//|                                                                                    |
+//|                                Vecto. (Tim Hauke)                                  |
+//|                                                                                    |
+//|                                                                                    |
+//|                                    FRAMEWORKS                                      |
+//|                                                                                    |
+//|                                    Express.js                                      |
+//|                                    BodyParser                                      |
+//|                                      Bcrypt                                        |
+//|                                   JSONWebToken                                     |
+//|                                                                                    |
+//|                                                                                    |
+//|                                Copyright (c) 2024                                  |
+//|                                                                                    |
+//|                                                                                    |
+//|------------------------------------------------------------------------------------|

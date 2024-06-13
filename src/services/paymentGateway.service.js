@@ -1,10 +1,31 @@
+//|------------------------------------------------------------------------------------|
+//|                                                                                    |
+//|                                                                                    |
+//|                                     CREATOR                                        |
+//|                                                                                    |
+//|                                Vecto. (Tim Hauke)                                  |
+//|                                                                                    |
+//|                                                                                    |
+//|                                    FRAMEWORKS                                      |
+//|                                                                                    |
+//|                                    Express.js                                      |
+//|                                    BodyParser                                      |
+//|                                      Bcrypt                                        |
+//|                                   JSONWebToken                                     |
+//|                                                                                    |
+//|                                                                                    |
+//|                                Copyright (c) 2024                                  |
+//|                                                                                    |
+//|                                                                                    |
+//|------------------------------------------------------------------------------------|
+
 const stripe = require('stripe')('your_stripe_secret_key');
 const paypal = require('paypal-rest-sdk');
 
 paypal.configure({
-    mode: 'sandbox',
-    client_id: 'your_paypal_client_id',
-    client_secret: 'your_paypal_client_secret'
+    mode: process.env.PAYPAL_MODE,
+    client_id: process.env.PAYPAL_CLIENT_ID,
+    client_secret: process.env.PAYPAL_CLIENT_SECRET
 });
 
 const paymentGatewayService = {
@@ -12,7 +33,7 @@ const paymentGatewayService = {
         try {
             const stripePayment = await stripe.charges.create({
                 amount: paymentDetails.amount,
-                currency: 'usd',
+                currency: process.env.PAYMENT_GATEWAY_CURRENCY,
                 source: paymentDetails.token,
                 description: paymentDetails.description
             });
@@ -25,20 +46,20 @@ const paymentGatewayService = {
         try {
             const paypalPayment = await new Promise((resolve, reject) => {
                 const paymentData = {
-                    intent: 'sale',
+                    intent: process.env.PAYMENTDATA_INTENT,
                     payer: {
-                        payment_method: 'paypal'
+                        payment_method: process.env.PAYER_PAYMENT_METHOD
                     },
                     transactions: [{
                         amount: {
                             total: paymentDetails.amount,
-                            currency: 'USD'
+                            currency: process.env.PAYMENT_GATEWAY_CURRENCY
                         },
                         description: paymentDetails.description
                     }],
                     redirect_urls: {
-                        return_url: 'http://localhost:3000/payment/success',
-                        cancel_url: 'http://localhost:3000/payment/cancel'
+                        return_url: process.env.REDIRECT_URLS_RETURN_URL,
+                        cancel_url: process.env.REDIRECT_URLS_CANCEL_URL
                     }
                 };
 
@@ -58,3 +79,24 @@ const paymentGatewayService = {
 };
 
 module.exports = paymentGatewayService;
+
+//|------------------------------------------------------------------------------------|
+//|                                                                                    |
+//|                                                                                    |
+//|                                     CREATOR                                        |
+//|                                                                                    |
+//|                                Vecto. (Tim Hauke)                                  |
+//|                                                                                    |
+//|                                                                                    |
+//|                                    FRAMEWORKS                                      |
+//|                                                                                    |
+//|                                    Express.js                                      |
+//|                                    BodyParser                                      |
+//|                                      Bcrypt                                        |
+//|                                   JSONWebToken                                     |
+//|                                                                                    |
+//|                                                                                    |
+//|                                Copyright (c) 2024                                  |
+//|                                                                                    |
+//|                                                                                    |
+//|------------------------------------------------------------------------------------|
